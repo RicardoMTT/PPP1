@@ -78,7 +78,8 @@
 
             <li class="nav-item" *ngFor="let item of sidenavAdmin">
               <a class="nav-link" [routerLink]="item.routerLink">
-                <i class="nav-icon fas fa-th"></i>
+                <i [ngClass]="returnClass(item.clase)"></i>
+                <!-- <i class="nav-icon fas fa-th"></i> -->
                 <p>{{ item.label }}</p>
               </a>
             </li>
