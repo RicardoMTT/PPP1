@@ -13,12 +13,12 @@ export class AppComponent {
   constructor() {
     this.sidenavAdmin = [
       {
-        label: 'Inicio',
+        label: 'Agencias',
         routerLink: '/',
         clase: 'nav-icon fas fa-th',
       },
       {
-        label: 'Resultados',
+        label: 'Usuario',
         routerLink: '/result',
         clase: 'nav-icon fas fa-table',
       },
