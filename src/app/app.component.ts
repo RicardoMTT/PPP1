@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,23 @@ export class AppComponent {
   title = 'frontend';
   sidenavAdmin: any[];
   valor = true;
-
-  constructor() {
+  currentPath: string;
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentPath = event.urlAfterRedirects;
+      }
+    });
     this.sidenavAdmin = [
       {
         label: 'Agencias',
         routerLink: '/',
-        clase: 'nav-icon fas fa-th',
+        clase: 'nav-icon fas fa-building',
       },
       {
         label: 'Usuario',
         routerLink: '/result',
-        clase: 'nav-icon fas fa-table',
+        clase: 'nav-icon fas fa-user',
       },
     ];
   }
