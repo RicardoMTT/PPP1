@@ -7,7 +7,6 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'frontend';
   sidenavAdmin: any[];
   valor = true;
   currentPath: string;
